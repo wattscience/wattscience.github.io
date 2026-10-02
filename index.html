@@ -111,8 +111,6 @@ p,details div{text-wrap:pretty}
 @keyframes rv-up{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
 @keyframes rv-zoom{from{transform:scale(1.15)}to{transform:scale(1)}}
 @keyframes rv-scale{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
-@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@keyframes spark{from{top:56px}to{top:calc(100% - 12px)}}
 @keyframes face{0%{filter:brightness(.04) saturate(.4)}35%{filter:brightness(.5) saturate(.8)}100%{filter:brightness(1) saturate(1)}}
 @keyframes hero-out{to{opacity:.1;transform:translateY(-30px)}}
 @supports (animation-timeline: scroll()){
@@ -130,7 +128,6 @@ p,details div{text-wrap:pretty}
 .rv{animation:rv-up linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
 .rv-scale{animation:rv-scale linear both;animation-timeline:view();animation-range:entry 0% cover 38%}
 .rv-zoom{animation:rv-zoom linear both;animation-timeline:view();animation-range:entry 0% exit 0%}
-.cur{transform-origin:top;animation:grow linear both;animation-timeline:scroll(root)}
 .hero-out{animation:hero-out linear both;animation-timeline:scroll(root);animation-range:420px 820px}
 }
 }
