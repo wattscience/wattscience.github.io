@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>업무 문의 · 과학커뮤니케이터 와트</title>
+<meta name="description" content="강연·수업·교육 프로그램·방송·과학 공연 섭외 문의를 남겨주세요.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="업무 문의 · 과학커뮤니케이터 와트">
+<meta property="og:description" content="강연·수업·교육 프로그램·방송·과학 공연 섭외 문의">
+<meta property="og:url" content="https://wattscience.github.io/inquiry.html">
+<meta property="og:image" content="https://wattscience.github.io/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+  :root {
+    --bg: #000000;
+    --ink: #F5F5F7;
+    --ink-2: #C7C7CC;
+    --ink-3: #8E8E93;
+    --field: #141416;
+    --line: rgba(255, 255, 255, 0.12);
+    --accent: #FFD60A;
+    --error: #FF8A80;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body {
+    margin: 0; min-height: 100vh; color: var(--ink); background: var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+  }
+  .top { position: relative; z-index: 3; max-width: 560px; margin: 0 auto; padding: 16px 16px 0; }
+  .back { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 8px; color: var(--ink-2); text-decoration: none; font-size: 15px; }
+  .back:hover { color: var(--ink); }
+  .back:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+  body { word-break: keep-all; overflow-wrap: break-word; }
+  h1 { text-wrap: balance; } p { text-wrap: pretty; }
+  .wrap { position: relative; max-width: 560px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* 전등 */
+  .lamp { position: relative; height: 230px; }
+  .cord { position: absolute; top: 0; left: 50%; width: 1.5px; height: 64px; background: #2C2C2E; transition: background .4s; }
+  .bulb { position: absolute; left: 50%; top: 40px; width: 150px; height: 202px; margin-left: -75px; z-index: 2; }
+  .bulb img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .bulb .on { opacity: 0; }
+  .light {
+    position: fixed; z-index: 0; left: 50%; top: 170px; width: 1400px; height: 1400px;
+    margin: -700px 0 0 -700px; border-radius: 50%; pointer-events: none; mix-blend-mode: screen;
+    background: radial-gradient(circle, rgba(255,208,128,.42) 0%, rgba(255,186,96,.2) 18%, rgba(255,170,80,.08) 40%, rgba(255,170,80,.02) 58%, rgba(255,170,80,0) 70%);
+    opacity: 0; transform: scale(.12);
+  }
+  body.lit .cord { background: var(--accent); }
+  body.lit .bulb .on { animation: flicker .9s linear forwards; }
+  body.lit .light { animation: spread 1.8s cubic-bezier(.2,.7,.2,1) .35s forwards; }
+  body.lit .content { text-shadow: -3px 5px 8px rgba(0,0,0,.9), -10px 18px 30px rgba(0,0,0,.55); }
+  @keyframes flicker { 0%{opacity:0} 20%{opacity:.85} 30%{opacity:.1} 50%{opacity:1} 60%{opacity:.5} 100%{opacity:1} }
+  @keyframes spread { to { opacity: 1; transform: scale(1); } }
+
+  .content { position: relative; z-index: 1; }
+  h1 { margin: 8px 0 0; font-size: 32px; font-weight: 800; line-height: 1.25; letter-spacing: -0.03em; }
+  .lead { margin: 14px 0 0; font-size: 16px; line-height: 1.7; color: var(--ink-2); }
+
+  form { margin-top: 40px; display: flex; flex-direction: column; gap: 22px; }
+  .row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 14px; }
+  @media (max-width: 420px) { .row { grid-template-columns: minmax(0,1fr); } }
+  label, legend { display: block; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding: 0; }
+  .req { color: var(--accent); margin-left: 2px; }
+  .opt { color: var(--ink-3); font-weight: 500; margin-left: 4px; }
+  input[type=text], input[type=email], input[type=tel], textarea {
+    width: 100%; font: inherit; font-size: 16px; color: var(--ink); background: var(--field);
+    border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; min-height: 52px;
+    transition: border-color .2s;
+  }
+  textarea { min-height: 150px; resize: vertical; line-height: 1.6; }
+  input::placeholder, textarea::placeholder { color: #5A5A5E; }
+  input:focus, textarea:focus { outline: none; border-color: var(--accent); }
+  fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips label { display: inline-flex; margin: 0; font-weight: 500; }
+  .chips input { position: absolute; opacity: 0; pointer-events: none; }
+  .chips span {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--field); color: var(--ink-2); font-size: 15px; cursor: pointer;
+    transition: background .2s, color .2s, border-color .2s;
+  }
+  .chips input:checked + span { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 700; text-shadow: none; }
+  .chips input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .error { margin: 0; min-height: 22px; font-size: 14px; color: var(--error); }
+  button {
+    font: inherit; font-size: 17px; font-weight: 700; color: #000; background: var(--accent);
+    border: 0; border-radius: 16px; min-height: 58px; cursor: pointer; text-shadow: none;
+    box-shadow: -10px 18px 40px rgba(0,0,0,.6);
+  }
+  button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  button[disabled] { opacity: .6; cursor: progress; }
+  .note { margin: 4px 0 0; font-size: 13px; line-height: 1.6; color: var(--ink-3); text-align: center; }
+
+  .done { display: none; text-align: center; margin-top: 24px; }
+  body.lit form, body.lit .intro { display: none; }
+  body.lit .done { display: block; }
+  .done h1 { font-size: 30px; }
+  .done a { color: var(--accent); }
+
+  @media (prefers-reduced-motion: reduce) {
+    body.lit .bulb .on, body.lit .light { animation-duration: .01s; animation-delay: 0s; }
+  }
+</style>
+</head>
+<body>
+<div class="light" aria-hidden="true"></div>
+<nav class="top"><a href="./" class="back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>와트 소개로 돌아가기</a></nav>
+<div class="wrap">
+  <div class="lamp" aria-hidden="true">
+    <div class="cord"></div>
+    <div class="bulb">
+      <img src="assets/bulb-off.png" alt="">
+      <img class="on" src="assets/bulb-on.png" alt="">
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="intro">
+      <h1>무엇이 궁금하신가요?</h1>
+      <p class="lead">강연, 과학 공연, 교육 프로그램, 방송·영상까지. 아래 내용을 남겨주시면 와트에게 바로 알림이 가고, 확인 후 회신드립니다.</p>
+    </div>
+
+    <form id="f" novalidate>
+      <div class="row">
+        <div><label for="name">이름<span class="req">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
+        <div><label for="org">소속·기관<span class="req">*</span></label><input id="org" name="org" type="text" autocomplete="organization" placeholder="학교, 기관, 방송사 등" required></div>
+      </div>
+      <div class="row">
+        <div><label for="email">이메일<span class="req">*</span></label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+        <div><label for="phone">연락처<span class="opt">선택</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+      </div>
+
+      <fieldset>
+        <legend>문의 유형<span class="req">*</span></legend>
+        <div class="chips">
+          <label><input type="radio" name="type" value="강연" required><span>강연</span></label>
+          <label><input type="radio" name="type" value="과학 공연·버스킹"><span>과학 공연·버스킹</span></label>
+          <label><input type="radio" name="type" value="교육 프로그램"><span>교육 프로그램</span></label>
+          <label><input type="radio" name="type" value="방송·영상 출연"><span>방송·영상 출연</span></label>
+          <label><input type="radio" name="type" value="행사 진행·사회"><span>행사 진행·사회</span></label>
+          <label><input type="radio" name="type" value="기타"><span>기타</span></label>
+        </div>
+      </fieldset>
+
+      <div class="row">
+        <div><label for="date">희망 일정<span class="opt">선택</span></label><input id="date" name="date" type="text" placeholder="예: 11월 셋째 주 오후"></div>
+        <div><label for="audience">대상·규모<span class="opt">선택</span></label><input id="audience" name="audience" type="text" placeholder="예: 중학생 120명"></div>
+      </div>
+      <div class="row">
+        <div><label for="place">장소<span class="opt">선택</span></label><input id="place" name="place" type="text" placeholder="예: 서울 OO도서관 / 온라인"></div>
+        <div><label for="budget">예산<span class="opt">선택</span></label><input id="budget" name="budget" type="text" placeholder="미정이어도 괜찮아요"></div>
+      </div>
+
+      <div>
+        <label for="message">문의 내용<span class="req">*</span></label>
+        <textarea id="message" name="message" placeholder="행사 취지, 원하시는 주제나 형식을 자유롭게 적어주세요." required></textarea>
+      </div>
+
+      <div class="hp" aria-hidden="true"><label for="website">웹사이트</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+
+      <p class="error" id="err" role="alert"></p>
+      <button type="submit" id="send">문의 보내기</button>
+      <p class="note">문의 확인 메일이 입력하신 이메일로 함께 발송됩니다.</p>
+    </form>
+
+    <div class="done" role="status">
+      <h1>문의가 와트에게<br>전달됐어요.</h1>
+      <p class="lead">확인 후 남겨주신 연락처로 회신드리겠습니다.<br>접수 확인 메일도 보내드렸어요.</p>
+      <p class="lead"><a href="mailto:scientistwatt@gmail.com">scientistwatt@gmail.com</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 문의 접수 주소 (Google Apps Script 웹 앱 배포 주소)
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwMXIYRqpsB2cEyA5ugvMOMGU6Bk-M3q-dkKCAXAsiNJvMojklybrIMAk-L6cyTMyPs4Q/exec';
+  const f = document.getElementById('f');
+  const err = document.getElementById('err');
+  const btn = document.getElementById('send');
+
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.textContent = '';
+    const data = {};
+    new FormData(f).forEach(function (v, k) { data[k] = String(v).trim(); });
+
+    const need = [['name', '이름'], ['org', '소속·기관'], ['email', '이메일'], ['type', '문의 유형'], ['message', '문의 내용']];
+    const miss = need.filter(function (p) { return !data[p[0]]; });
+    if (miss.length) {
+      err.textContent = miss.map(function (p) { return p[1]; }).join(', ') + '을(를) 입력해 주세요.';
+      const first = document.getElementsByName(miss[0][0])[0];
+      if (first) first.focus();
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      err.textContent = '이메일 주소 형식을 확인해 주세요.';
+      document.getElementById('email').focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '보내는 중…';
+    var fail = function () {
+      err.textContent = '전송하지 못했어요. 잠시 후 다시 시도하시거나 scientistwatt@gmail.com으로 메일 주세요.';
+      btn.disabled = false; btn.textContent = '문의 보내기';
+    };
+    if (!ENDPOINT || ENDPOINT.indexOf('script.google.com') === -1) { fail(); return; }
+    fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(data) })
+      .then(function () {
+        document.body.classList.add('lit');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(fail);
+  });
+</script>
+</body>
+</html>
