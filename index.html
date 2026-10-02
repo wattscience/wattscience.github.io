@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What is going on? · 과학커뮤니케이터 와트</title>
+<meta name="description" content="세상의 모든 '왜?'에 불을 켭니다. 과학커뮤니케이터 와트의 강연·교육 프로그램·방송·과학 공연 섭외 안내.">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://wattisgoingon.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="과학커뮤니케이터 와트">
+<meta property="og:title" content="What is going on? · 과학커뮤니케이터 와트">
+<meta property="og:description" content="세상의 모든 '왜?'에 불을 켭니다. 강연·교육 프로그램·방송·과학 공연 섭외 문의">
+<meta property="og:url" content="https://wattisgoingon.github.io/">
+<meta property="og:image" content="https://wattisgoingon.github.io/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is going on? · 과학커뮤니케이터 와트">
+<meta name="twitter:description" content="세상의 모든 '왜?'에 불을 켭니다.">
+<meta name="twitter:image" content="https://wattisgoingon.github.io/assets/og.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+body{margin:0;background:#000}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+a{color:#FFD60A}a:hover{color:#FFE45C}
+details>summary{list-style:none;cursor:pointer}
+details>summary::-webkit-details-marker{display:none}
+details[open] .chev{transform:rotate(180deg)}
+.chev{transition:transform .3s ease}
+.car{display:flex;gap:12px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-inline:24px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;margin:0 -24px -64px;padding:12px 0 76px 24px}
+.car::-webkit-scrollbar{display:none}
+.car:focus-visible{outline:2px solid var(--accent);outline-offset:-6px}
+.card{flex:0 0 calc(100% - 40px);scroll-snap-align:start;scroll-snap-stop:always;border-radius:24px;overflow:hidden;box-shadow:var(--bshadow)}
+.car-end{flex:0 0 28px}
+.dot{width:6px;height:6px;border-radius:999px;background:#48484A;transition:width .25s}
+.dot.first{width:18px;background:#F5F5F7}
+.car{cursor:grab;user-select:none;-webkit-user-select:none}
+.car.dragging{cursor:grabbing}
+.car-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid #3A3A3C;background:transparent;color:#F5F5F7;cursor:pointer;padding:0;text-shadow:none;transition:background .2s,border-color .2s}
+.car-btn:hover{background:#1C1C1E;border-color:#636366}
+.car-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.branch,.h-branch{transition:background .2s ease}
+[data-on="1"] .branch,[data-on="1"] .h-branch{background:var(--accent)!important}
+.b-on,.h-on{opacity:0}
+[data-on="1"] .b-on,[data-on="1"] .h-on{animation:on .9s linear .12s both}
+.glow,.h-glow{opacity:0;transform:scale(.12);transition:opacity .7s ease,transform 1s ease}
+[data-on="1"] .glow,[data-on="1"] .h-glow{opacity:1;transform:none;transition:opacity 1.4s ease .5s,transform 2.4s cubic-bezier(.2,.7,.2,1) .5s}
+.wake,.h-wake{opacity:.14;transition:opacity .6s ease,text-shadow .6s ease}
+[data-on="1"] .wake,[data-on="1"] .h-wake{opacity:1;text-shadow:var(--tshadow);transition:opacity 1.2s ease .55s,text-shadow 1.6s ease .55s}
+.h-cast{transition:text-shadow .6s ease}
+[data-on="1"] .h-cast{text-shadow:var(--tshadow);transition:text-shadow 1.6s ease .55s}
+.h-face{filter:brightness(.04) saturate(.4);transition:filter .6s ease}
+[data-on="1"] .h-face{filter:brightness(1) saturate(1);transition:filter 2.2s ease .45s}
+.lit-box,.card{transition:box-shadow .6s ease}
+[data-on="0"] .lit-box,[data-on="0"] .card{box-shadow:0 0 0 rgba(0,0,0,0)!important}
+[data-on="1"] .lit-box,[data-on="1"] .card{transition:box-shadow 1.6s ease .55s}
+@media (prefers-reduced-motion:reduce){[data-on="1"] .b-on,[data-on="1"] .h-on{animation:none;opacity:1}*{transition-duration:.01s!important;transition-delay:0s!important}}
+@keyframes k3_1{0%,10.0%{width:18px;background:#F5F5F7}16.7%,83.3%{width:6px;background:#48484A}90.0%,100%{width:18px;background:#F5F5F7}}
+@keyframes k3_2{0%,16.7%{width:6px;background:#48484A}23.3%,43.3%{width:18px;background:#F5F5F7}50.0%,100%{width:6px;background:#48484A}}
+@keyframes k3_3{0%,50.0%{width:6px;background:#48484A}56.7%,76.7%{width:18px;background:#F5F5F7}83.3%,100%{width:6px;background:#48484A}}
+@keyframes k5_1{0%,6.0%{width:18px;background:#F5F5F7}10.0%,90.0%{width:6px;background:#48484A}94.0%,100%{width:18px;background:#F5F5F7}}
+@keyframes k5_2{0%,10.0%{width:6px;background:#48484A}14.0%,26.0%{width:18px;background:#F5F5F7}30.0%,100%{width:6px;background:#48484A}}
+@keyframes k5_3{0%,30.0%{width:6px;background:#48484A}34.0%,46.0%{width:18px;background:#F5F5F7}50.0%,100%{width:6px;background:#48484A}}
+@keyframes k5_4{0%,50.0%{width:6px;background:#48484A}54.0%,66.0%{width:18px;background:#F5F5F7}70.0%,100%{width:6px;background:#48484A}}
+@keyframes k5_5{0%,70.0%{width:6px;background:#48484A}74.0%,86.0%{width:18px;background:#F5F5F7}90.0%,100%{width:6px;background:#48484A}}
+.dotbtn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:32px;padding:0;margin:0;border:0;background:transparent;cursor:pointer}
+.dotbtn:focus-visible{outline:2px solid var(--accent);outline-offset:-4px;border-radius:999px}
+@media (min-width:1024px){
+.navin{max-width:1200px!important;padding:0 48px!important}
+#top{min-height:880px!important}
+.hp{position:absolute!important;top:236px;right:max(132px,calc(50% - 580px));width:520px;margin:0!important;justify-content:flex-end!important}
+.hp img{width:100%!important;margin:0!important}
+.ht{max-width:1200px!important;margin:-210px auto 0!important;padding:0 48px!important}
+.ht>*{max-width:600px}
+.ht h1{font-size:136px!important;letter-spacing:-0.05em!important}
+.ht .h-wake p:first-child{font-size:34px!important;margin-top:40px!important}
+.ht .h-wake p:nth-child(2){font-size:18px!important}
+.chooser{max-width:1200px!important;padding:40px 48px 200px!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:40px}
+.chooser>p{grid-column:1/-1;margin-bottom:28px!important}
+.chooser>a{border-top:1px solid #2C2C2E;padding:28px 0 0!important;font-size:26px!important;align-items:flex-start!important;min-height:120px}
+.sec{padding-bottom:220px!important}
+.two{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:88px;max-width:1200px!important;padding:0 48px!important;grid-auto-flow:row dense;align-items:start}
+.two>*{grid-column:1}
+.two>[data-car]{grid-column:2;grid-row:1/span 40;position:sticky;top:112px;margin-top:0!important}
+.two h2{font-size:58px!important;line-height:1.15!important}
+.two>p:not(:first-child){font-size:20px!important;line-height:1.75!important}
+.two .car{margin:0 0 -64px!important;padding:12px 0 76px!important;scroll-padding-inline:0!important}
+.two .card{flex-basis:calc(100% - 64px)!important}
+.two .car-end{flex-basis:52px!important}
+.inq{max-width:760px!important}
+.inq h2{font-size:64px!important}
+.inq>p{font-size:20px!important}
+.det{max-width:760px!important}
+}
+.sec{view-timeline-name:--sec}
+@keyframes on{0%{opacity:0}30%{opacity:.85}40%{opacity:.15}62%{opacity:1}72%{opacity:.55}100%{opacity:1}}
+@keyframes wire-on{from{background:#2C2C2E}to{background:var(--accent)}}
+@keyframes wake{from{opacity:.14;text-shadow:0 0 0 rgba(0,0,0,0)}50%{opacity:.9}to{opacity:1;text-shadow:var(--tshadow)}}
+@keyframes cast{from{text-shadow:0 0 0 rgba(0,0,0,0)}to{text-shadow:var(--tshadow)}}
+@keyframes spread{0%{opacity:0;transform:scale(.12)}25%{opacity:.9}100%{opacity:1;transform:scale(1)}}
+@keyframes box-in{from{box-shadow:0 0 0 rgba(0,0,0,0)}to{box-shadow:var(--bshadow)}}
+@keyframes rv-up{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+@keyframes rv-zoom{from{transform:scale(1.15)}to{transform:scale(1)}}
+@keyframes rv-scale{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes spark{from{top:56px}to{top:calc(100% - 12px)}}
+@keyframes face{0%{filter:brightness(.04) saturate(.4)}35%{filter:brightness(.5) saturate(.8)}100%{filter:brightness(1) saturate(1)}}
+@keyframes hero-out{to{opacity:.1;transform:translateY(-30px)}}
+@supports (animation-timeline: scroll()){
+.s2{timeline-scope:--c2}.s2 .dotbtn:nth-child(1) .dot{animation:k5_1 linear both;animation-timeline:--c2}.s2 .dotbtn:nth-child(2) .dot{animation:k5_2 linear both;animation-timeline:--c2}.s2 .dotbtn:nth-child(3) .dot{animation:k5_3 linear both;animation-timeline:--c2}.s2 .dotbtn:nth-child(4) .dot{animation:k5_4 linear both;animation-timeline:--c2}.s2 .dotbtn:nth-child(5) .dot{animation:k5_5 linear both;animation-timeline:--c2}
+.s1{timeline-scope:--c1}.s1 .dotbtn:nth-child(1) .dot{animation:k3_1 linear both;animation-timeline:--c1}.s1 .dotbtn:nth-child(2) .dot{animation:k3_2 linear both;animation-timeline:--c1}.s1 .dotbtn:nth-child(3) .dot{animation:k3_3 linear both;animation-timeline:--c1}
+.s3{timeline-scope:--c3}.s3 .dotbtn:nth-child(1) .dot{animation:k5_1 linear both;animation-timeline:--c3}.s3 .dotbtn:nth-child(2) .dot{animation:k5_2 linear both;animation-timeline:--c3}.s3 .dotbtn:nth-child(3) .dot{animation:k5_3 linear both;animation-timeline:--c3}.s3 .dotbtn:nth-child(4) .dot{animation:k5_4 linear both;animation-timeline:--c3}.s3 .dotbtn:nth-child(5) .dot{animation:k5_5 linear both;animation-timeline:--c3}
+.c1{scroll-timeline:--c1 x}.c2{scroll-timeline:--c2 x}.c3{scroll-timeline:--c3 x}
+
+
+
+
+}
+@media (prefers-reduced-motion:no-preference){
+@supports (animation-timeline: view()){
+.rv{animation:rv-up linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
+.rv-scale{animation:rv-scale linear both;animation-timeline:view();animation-range:entry 0% cover 38%}
+.rv-zoom{animation:rv-zoom linear both;animation-timeline:view();animation-range:entry 0% exit 0%}
+.cur{transform-origin:top;animation:grow linear both;animation-timeline:scroll(root)}
+.hero-out{animation:hero-out linear both;animation-timeline:scroll(root);animation-range:420px 820px}
+}
+}
+</style>
+</head>
+<body>
+<div style="--accent: #FFD60A; --tshadow: -3px 5px 8px rgba(0, 0, 0, 0.9), -10px 18px 30px rgba(0, 0, 0, 0.55); --bshadow: -18px 30px 60px rgba(0, 0, 0, 0.85), -4px 8px 16px rgba(0, 0, 0, 0.6), inset -1px 1px 0 rgba(255, 214, 150, 0.22); overflow-x: clip; background: #000000; color: #F5F5F7; font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; -webkit-font-smoothing: antialiased">
+
+<svg width="0" height="0" style="position: absolute" aria-hidden="true"><defs>
+<radialGradient id="gOff" cx="40%" cy="62%" r="65%"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.08"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.02"></stop></radialGradient>
+<radialGradient id="gOn" cx="50%" cy="64%" r="62%"><stop offset="0" stop-color="#FFFCEB"></stop><stop offset="0.45" stop-color="#FFE39A"></stop><stop offset="1" stop-color="#F5A623" stop-opacity="0.85"></stop></radialGradient>
+<radialGradient id="gGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFD27A" stop-opacity="0.5"></stop><stop offset="0.4" stop-color="#FFB547" stop-opacity="0.16"></stop><stop offset="1" stop-color="#FFB547" stop-opacity="0"></stop></radialGradient>
+<linearGradient id="gMetal" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#3A3A3C"></stop><stop offset="0.45" stop-color="#C7C7CC"></stop><stop offset="1" stop-color="#2C2C2E"></stop></linearGradient>
+<filter id="fBlur" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.8"></feGaussianBlur></filter>
+</defs></svg>
+
+<div aria-hidden="true" style="position: fixed; top: 56px; bottom: 0; right: 14px; width: 1.5px; background: rgba(255,255,255,0.09); z-index: 15; pointer-events: none"></div>
+<div class="cur" data-cur aria-hidden="true" style="transform-origin: top; position: fixed; top: 56px; bottom: 0; right: 14px; width: 1.5px; background: var(--accent); opacity: 0.55; z-index: 15; pointer-events: none"></div>
+<div class="spark" data-spark aria-hidden="true" style="position: fixed; top: 56px; right: 11px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px 3px rgba(255, 214, 10, 0.55); z-index: 16; pointer-events: none"></div>
+<button type="button" id="wire" aria-label="전선을 끌어 페이지 이동" style="position: fixed; top: 56px; bottom: 0; right: 0; width: 26px; padding: 0; margin: 0; border: none; background: transparent; cursor: ns-resize; touch-action: none; z-index: 17"></button>
+
+<nav style="position: sticky; top: 0; z-index: 20; background: rgba(0, 0, 0, 0.72); backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-top: env(safe-area-inset-top, 0px)">
+<div class="navin" style="max-width: 980px; margin: 0 auto; height: 56px; padding: 0 16px 0 20px; display: flex; align-items: center; justify-content: space-between">
+<a href="#top" style="color: #F5F5F7; text-decoration: none; font-size: 16px; font-weight: 700; letter-spacing: -0.01em">와트<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 500; color: #8E8E93; margin-left: 6px; font-size: 13px">Science Communicator</span></a>
+<a href="#inquiry" style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 999px; background: #FFD60A; color: #000000; font-size: 14px; font-weight: 700; text-decoration: none">업무 문의</a>
+</div>
+</nav>
+
+<section id="top" data-on="0" style="position: relative; min-height: 780px; padding: 0 0 64px; box-sizing: border-box">
+<div data-lamp="0" style="position: relative; height: 305px">
+<div class="h-glow" aria-hidden="true" style="position: absolute; z-index: 0; width: 1500px; height: 1500px; right: -640px; top: -526px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 208, 128, 0.40) 0%, rgba(255, 186, 96, 0.20) 18%, rgba(255, 170, 80, 0.08) 40%, rgba(255, 170, 80, 0.02) 58%, rgba(255, 170, 80, 0) 70%); mix-blend-mode: screen; pointer-events: none"></div>
+<div class="h-branch" style="position: absolute; top: 0; right: 14px; width: 96px; height: 1.5px; background: #2C2C2E"></div>
+<div class="h-branch" style="position: absolute; top: 0; right: 109px; width: 1.5px; height: 80px; background: #2C2C2E"></div>
+<div style="position: absolute; z-index: 2; top: 40px; right: 0px; width: 220px; height: 296px">
+<img src="assets/bulb-off.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+<img class="h-on" src="assets/bulb-on.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+</div>
+</div>
+<div class="hero-out hp" style="position: relative; z-index: 1; display: flex; justify-content: flex-start; margin-top: -28px; pointer-events: none">
+<img class="h-face" src="assets/hero-portrait.png" alt="과학커뮤니케이터 와트" style="display: block; width: min(80%, 420px); height: auto; margin-left: -8px">
+</div>
+<div class="hero-out ht" style="position: relative; z-index: 2; max-width: 560px; margin: -120px auto 0; padding: 0 24px; box-sizing: border-box">
+<h1 class="h-cast" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 58px; font-weight: 700; line-height: 0.98; letter-spacing: -0.045em">What is<br>going on<span style="color: #FFD60A">?</span></h1>
+<div class="h-wake">
+<p style="margin: 28px 0 0; font-size: 24px; font-weight: 700; line-height: 1.4; letter-spacing: -0.02em">세상의 모든 ‘왜?’에<br>불을 켭니다.</p>
+<p style="margin: 14px 0 0; font-size: 16px; line-height: 1.6; color: #A1A1A6">과학커뮤니케이터 와트 · 강연 · 교육 프로그램 · 영상 · 과학 공연</p>
+</div>
+<p style="margin: 48px 0 0; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #6E6E73">SCROLL TO SWITCH ON ↓</p>
+</div>
+</section>
+
+
+
+<section class="chooser" style="padding: 0 24px 120px; max-width: 560px; margin: 0 auto">
+<p class="rv" style="margin: 0 0 20px; font-size: 15px; color: #A1A1A6">어떤 일로 찾아오셨나요?</p>
+<a class="rv" href="#education" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; color: #F5F5F7; text-decoration: none; font-size: 24px; font-weight: 700; letter-spacing: -0.02em">강연·수업·교육 프로그램을 찾고 있어요<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="rv" href="#pd" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; color: #F5F5F7; text-decoration: none; font-size: 24px; font-weight: 700; letter-spacing: -0.02em">방송·영상 출연을 제안해요<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="rv" href="#planner" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; color: #F5F5F7; text-decoration: none; font-size: 24px; font-weight: 700; letter-spacing: -0.02em">행사를 기획하고 있어요<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</section>
+
+<section id="education" class="sec" data-on="0" style="padding: 0 0 120px">
+<div data-lamp="1" style="position: relative; height: 215px">
+<div class="glow" aria-hidden="true" style="position: absolute; z-index: 0; width: 1200px; height: 1200px; right: -516px; top: -446px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 208, 128, 0.40) 0%, rgba(255, 186, 96, 0.20) 18%, rgba(255, 170, 80, 0.08) 40%, rgba(255, 170, 80, 0.02) 58%, rgba(255, 170, 80, 0) 70%); mix-blend-mode: screen; pointer-events: none"></div>
+<div class="branch" style="position: absolute; top: 0; right: 14px; width: 70px; height: 1.5px; background: #2C2C2E"></div>
+<div class="branch" style="position: absolute; top: 0; right: 83px; width: 1.5px; height: 56px; background: #2C2C2E"></div>
+<div style="position: absolute; z-index: 2; top: 29px; right: 9px; width: 150px; height: 202px">
+<img src="assets/bulb-off.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+<img class="b-on" src="assets/bulb-on.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+</div>
+</div>
+<div class="wake two" style="position: relative; z-index: 1; max-width: 560px; margin: 0 auto; padding: 0 24px">
+<p class="rv" style="margin: 0; font-size: 15px; font-weight: 700; color: #FFD60A">학교·기관 교육 담당자라면</p>
+<h2 class="rv" style="margin: 10px 0 0; font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -0.035em">교실의 질문을<br>꿈으로 잇습니다.</h2>
+<div class="s2" data-car style="margin-top: 36px">
+<div class="car c2" tabindex="0" aria-label="사진 넘겨보기"><div class="card" role="group" aria-roledescription="slide" aria-label="1 / 5" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/edu-1.jpg" alt="자기소개에 손을 번쩍 든 아이들과 함께한 강연" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" role="group" aria-roledescription="slide" aria-label="2 / 5" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/edu-2.jpg" alt="그림 게임으로 아이들과 어울리는 수업" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" role="group" aria-roledescription="slide" aria-label="3 / 5" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/edu-3.jpg" alt="빛 실험을 들여다보는 아이들" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" role="group" aria-roledescription="slide" aria-label="4 / 5" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/edu-4.jpg" alt="비유로 과학을 설명하는 영재 수업" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" role="group" aria-roledescription="slide" aria-label="5 / 5" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/edu-5.jpg" alt="가족이 함께하는 과학 프로그램" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" aria-hidden="true" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/edu-1.jpg" alt="" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="car-end" aria-hidden="true"></div></div>
+<div style="position: relative; margin-top: 10px; display: flex; justify-content: center; align-items: center"><button type="button" class="dotbtn" data-i="0" aria-label="1번째 사진 보기"><span class="dot first"></span></button><button type="button" class="dotbtn" data-i="1" aria-label="2번째 사진 보기"><span class="dot"></span></button><button type="button" class="dotbtn" data-i="2" aria-label="3번째 사진 보기"><span class="dot"></span></button><button type="button" class="dotbtn" data-i="3" aria-label="4번째 사진 보기"><span class="dot"></span></button><button type="button" class="dotbtn" data-i="4" aria-label="5번째 사진 보기"><span class="dot"></span></button></div>
+</div>
+<p class="rv" style="margin: 32px 0 0; font-size: 18px; line-height: 1.7; color: #D1D1D6">한 번의 강연부터 여러 회차의 수업, 교육 프로그램 기획과 운영까지. 어린이·청소년의 눈높이에 맞춘 과학 교육을 만들어 갑니다.</p>
+<div style="margin-top: 56px; display: flex; flex-direction: column; gap: 44px">
+<div class="rv" style="display: flex; align-items: flex-end; gap: 16px">
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 112px; font-weight: 700; line-height: 0.8; letter-spacing: -0.06em; color: #FFD60A">5</div>
+<div style="padding-bottom: 4px"><div style="font-size: 22px; font-weight: 800">년째</div><div style="font-size: 16px; color: #A1A1A6; margin-top: 2px">과학 강연·교육 현장에서</div></div>
+</div>
+</div>
+<div style="margin-top: 48px; display: flex; flex-direction: column; gap: 40px">
+<div class="sr"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">강연 대회 수상</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">FameLab Korea 2021 국내 3위</div></div>
+<div class="sr"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">영재교육원 강사</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">강원대학교 과학영재교육원 · 와이즈만 영재교육 심화과정</div></div>
+<div class="sr"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">교육 프로그램 운영</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">영등포문화재단 어린이 과학 · NASA 유니버셜 리더 코스 · 꾸그</div></div>
+<div class="sr"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">책으로도 만나요</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">&lt;컵라면이 익을 동안 읽는 과학&gt; 저자</div></div>
+</div>
+</div>
+</section>
+
+
+
+<section id="pd" class="sec" data-on="0" style="padding: 0 0 120px">
+<div data-lamp="2" style="position: relative; height: 215px">
+<div class="glow" aria-hidden="true" style="position: absolute; z-index: 0; width: 1200px; height: 1200px; right: -516px; top: -446px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 208, 128, 0.40) 0%, rgba(255, 186, 96, 0.20) 18%, rgba(255, 170, 80, 0.08) 40%, rgba(255, 170, 80, 0.02) 58%, rgba(255, 170, 80, 0) 70%); mix-blend-mode: screen; pointer-events: none"></div>
+<div class="branch" style="position: absolute; top: 0; right: 14px; width: 70px; height: 1.5px; background: #2C2C2E"></div>
+<div class="branch" style="position: absolute; top: 0; right: 83px; width: 1.5px; height: 56px; background: #2C2C2E"></div>
+<div style="position: absolute; z-index: 2; top: 29px; right: 9px; width: 150px; height: 202px">
+<img src="assets/bulb-off.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+<img class="b-on" src="assets/bulb-on.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+</div>
+</div>
+<div class="wake two" style="position: relative; z-index: 1; max-width: 560px; margin: 0 auto; padding: 0 24px">
+<p class="rv" style="margin: 0; font-size: 15px; font-weight: 700; color: #FFD60A">PD·제작자라면</p>
+<h2 class="rv" style="margin: 10px 0 0; font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -0.035em">카메라 앞에서<br>더 선명해집니다.</h2>
+<div class="s3" data-car style="margin-top: 36px">
+<div class="car c3" tabindex="0" aria-label="사진 넘겨보기"><div class="card" role="group" aria-roledescription="slide" aria-label="1 / 5" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/pd-ytn1.jpg" alt="YTN 사이언스 와이언스 출연 장면" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" role="group" aria-roledescription="slide" aria-label="2 / 5" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/pd-ytn2.jpg" alt="와이언스에서 직렬연결을 설명하는 장면" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" role="group" aria-roledescription="slide" aria-label="3 / 5" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/pd-kisti.jpg" alt="한국과학기술정보연구원 홍보 영상 출연 장면" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" role="group" aria-roledescription="slide" aria-label="4 / 5" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/pd-mb1.jpg" alt="매불쇼 이건 왜 이럴 과학 코너 출연 장면" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" role="group" aria-roledescription="slide" aria-label="5 / 5" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/pd-mb2.jpg" alt="매불쇼에서 과학을 설명하는 장면" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" aria-hidden="true" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/pd-ytn1.jpg" alt="" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="car-end" aria-hidden="true"></div></div>
+<div style="position: relative; margin-top: 10px; display: flex; justify-content: center; align-items: center"><button type="button" class="dotbtn" data-i="0" aria-label="1번째 사진 보기"><span class="dot first"></span></button><button type="button" class="dotbtn" data-i="1" aria-label="2번째 사진 보기"><span class="dot"></span></button><button type="button" class="dotbtn" data-i="2" aria-label="3번째 사진 보기"><span class="dot"></span></button><button type="button" class="dotbtn" data-i="3" aria-label="4번째 사진 보기"><span class="dot"></span></button><button type="button" class="dotbtn" data-i="4" aria-label="5번째 사진 보기"><span class="dot"></span></button></div>
+</div>
+<p class="rv" style="margin: 32px 0 0; font-size: 18px; line-height: 1.7; color: #D1D1D6">기획부터 출연, 진행까지. 방송사와 연구기관이 믿고 맡긴 과학 영상에 함께해 왔습니다.</p>
+<div style="margin-top: 56px">
+<div class="rv" style="display: flex; align-items: flex-end; gap: 16px">
+<div style="font-family: 'Space Grotesk', sans-serif; font-size: 112px; font-weight: 700; line-height: 0.8; letter-spacing: -0.06em; color: #FFD60A">1</div>
+<div style="padding-bottom: 4px"><div style="font-size: 22px; font-weight: 800">위</div><div style="font-size: 16px; color: #A1A1A6; margin-top: 2px">8.22 Energy Film Festival · 국제 영상제</div></div>
+</div>
+</div>
+<div style="margin-top: 48px; display: flex; flex-direction: column; gap: 40px">
+<div class="sl"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">YTN 사이언스 &lt;와이언스&gt;</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">유튜브 과학 콘텐츠 꾸준히 출연 중</div></div>
+<div class="sl"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">KISTI 영상 총괄</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">한국과학기술정보연구원 홍보 영상 제작</div></div>
+<div class="sl"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">방송·라디오 출연</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">팟캐스트 &lt;매불쇼&gt; 과학 코너 · 라디오 &lt;과학수다&gt;</div></div>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start"><a class="rv" href="https://www.youtube.com/watch?v=-JmOYMMrytI" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 40px; min-height: 44px; font-size: 17px; text-decoration: none">와이언스 출연 영상 보기<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+<a class="rv" href="https://youtu.be/UIioCQPQuh4" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; min-height: 44px; font-size: 15px; color: #A1A1A6; text-decoration: none">KISTI 홍보 영상 보기<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a></div>
+</div>
+</section>
+
+<section id="planner" class="sec" data-on="0" style="padding-bottom: 120px">
+<div data-lamp="3" style="position: relative; height: 215px">
+<div class="glow" aria-hidden="true" style="position: absolute; z-index: 0; width: 1200px; height: 1200px; right: -516px; top: -446px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 208, 128, 0.40) 0%, rgba(255, 186, 96, 0.20) 18%, rgba(255, 170, 80, 0.08) 40%, rgba(255, 170, 80, 0.02) 58%, rgba(255, 170, 80, 0) 70%); mix-blend-mode: screen; pointer-events: none"></div>
+<div class="branch" style="position: absolute; top: 0; right: 14px; width: 70px; height: 1.5px; background: #2C2C2E"></div>
+<div class="branch" style="position: absolute; top: 0; right: 83px; width: 1.5px; height: 56px; background: #2C2C2E"></div>
+<div style="position: absolute; z-index: 2; top: 29px; right: 9px; width: 150px; height: 202px">
+<img src="assets/bulb-off.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+<img class="b-on" src="assets/bulb-on.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+</div>
+</div>
+<div class="wake two" style="position: relative; z-index: 1; max-width: 560px; margin: 0 auto; padding: 0 24px">
+<p class="rv" style="margin: 0; font-size: 15px; font-weight: 700; color: #FFD60A">행사 기획자라면</p>
+<h2 class="rv" style="margin: 10px 0 0; font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -0.035em">무대를<br>실험실로 바꿉니다.</h2>
+<div class="s1" data-car style="margin-top: 36px">
+<div class="car c1" tabindex="0" aria-label="사진 넘겨보기"><div class="card" role="group" aria-roledescription="slide" aria-label="1 / 3" style="aspect-ratio: 3 / 2; background: #1C1C1E"><video src="assets/ev-fire.mp4" poster="assets/ev-fire-poster.jpg" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="손 위에 불꽃을 피우는 과학 공연 영상" style="display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none"></video></div><div class="card" role="group" aria-roledescription="slide" aria-label="2 / 3" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/ev-fair.jpg" alt="2021 대한민국 과학기술대전 무대에서 과학 공연을 하는 모습" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="card" role="group" aria-roledescription="slide" aria-label="3 / 3" style="aspect-ratio: 3 / 2; background: #1C1C1E"><video src="assets/ev-trio.mp4" poster="assets/ev-trio-poster.jpg" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="우주복을 입고 실험을 선보이는 과학 공연 영상" style="display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none"></video></div><div class="card" aria-hidden="true" style="aspect-ratio: 3 / 2; background: #1C1C1E"><img src="assets/ev-fire-poster.jpg" alt="" draggable="false" style="display: block; width: 100%; height: 100%; object-fit: cover"></div><div class="car-end" aria-hidden="true"></div></div>
+<div style="position: relative; margin-top: 10px; display: flex; justify-content: center; align-items: center"><button type="button" class="dotbtn" data-i="0" aria-label="1번째 사진 보기"><span class="dot first"></span></button><button type="button" class="dotbtn" data-i="1" aria-label="2번째 사진 보기"><span class="dot"></span></button><button type="button" class="dotbtn" data-i="2" aria-label="3번째 사진 보기"><span class="dot"></span></button></div>
+</div>
+<p class="rv" style="margin: 32px 0 0; font-size: 18px; line-height: 1.7; color: #D1D1D6">대중 강연부터 사이언스 버스킹, 과학 콘서트와 토크쇼 진행까지. 행사에 꼭 맞는 형식으로 설계합니다.</p>
+<div style="margin-top: 56px; display: flex; flex-direction: column; gap: 40px">
+<div class="sl"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">대한민국 과학기술대전</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">2021 과학 공연 무대</div></div>
+<div class="sl"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">과기정통부 위촉</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">국가가 인정한 과학 커뮤니케이터</div></div>
+<div class="sl"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">사이언스 버스킹 우수콘텐츠</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">2021 선정 · 쇼케이스 자문위원</div></div>
+<div class="sl"><div style="font-size: 28px; font-weight: 800; letter-spacing: -0.03em">콘서트도, 토크쇼도</div><div style="margin-top: 6px; font-size: 16px; color: #A1A1A6">&lt;코딱지별 바이러스&gt; · &lt;궤도의 과학토크쇼&gt; 진행</div></div>
+</div>
+<a class="rv" href="https://www.youtube.com/watch?v=11oS9IkwJNc" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 40px; min-height: 44px; font-size: 17px; text-decoration: none">사이언스 버스킹 무대 보기<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+</div>
+</section>
+
+<section id="inquiry" class="sec" data-on="0" style="padding: 0 0 120px; text-align: center">
+<div data-lamp="4" style="position: relative; height: 215px">
+<div class="glow" aria-hidden="true" style="position: absolute; z-index: 0; width: 1200px; height: 1200px; right: -516px; top: -446px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 208, 128, 0.40) 0%, rgba(255, 186, 96, 0.20) 18%, rgba(255, 170, 80, 0.08) 40%, rgba(255, 170, 80, 0.02) 58%, rgba(255, 170, 80, 0) 70%); mix-blend-mode: screen; pointer-events: none"></div>
+<div class="branch" style="position: absolute; top: 0; right: 14px; width: 70px; height: 1.5px; background: #2C2C2E"></div>
+<div class="branch" style="position: absolute; top: 0; right: 83px; width: 1.5px; height: 56px; background: #2C2C2E"></div>
+<div style="position: absolute; z-index: 2; top: 29px; right: 9px; width: 150px; height: 202px">
+<img src="assets/bulb-off.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+<img class="b-on" src="assets/bulb-on.png" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+</div>
+</div>
+<div class="wake" style="position: relative; z-index: 1">
+<div class="inq" style="max-width: 560px; margin: 0 auto; padding: 8px 24px 0">
+<h2 class="rv" style="margin: 0; font-size: 42px; font-weight: 800; line-height: 1.4; letter-spacing: 0.01em">다음 ‘왜?’를<br>함께 풀어볼까요?</h2>
+<p class="rv" style="margin: 24px 0 0; font-size: 18px; line-height: 1.8; letter-spacing: 0.01em; color: #D1D1D6">행사명, 대상, 희망 일정을 남겨주시면<br>확인 후 회신드리겠습니다.</p>
+<div style="margin-top: 40px; text-align: left; background: #141416; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 28px 22px 22px; box-shadow: var(--bshadow)">
+<div style="display: flex; align-items: center; gap: 14px">
+<img src="assets/avatar.jpg" alt="와트" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; box-shadow: -4px 8px 16px rgba(0, 0, 0, 0.6)">
+<div><p style="margin: 0; font-size: 14px; font-weight: 700; color: #FFD60A">업무 문의 · 와트가 직접 확인해요</p>
+<div style="margin-top: 4px; font-size: 22px; font-weight: 800; letter-spacing: -0.02em">문의서 남기기</div></div>
+</div>
+<p style="margin: 10px 0 0; font-size: 15px; line-height: 1.65; color: #C7C7CC">강연, 수업, 교육 프로그램, 공연, 영상 무엇이든 괜찮아요. 작성하시면 와트에게 바로 알림이 전달됩니다.</p>
+<a id="inquiry-link" href="mailto:scientistwatt@gmail.com?subject=%5B%EC%97%85%EB%AC%B4%20%EB%AC%B8%EC%9D%98%5D%20&body=%E2%80%A2%20%EA%B8%B0%EA%B4%80%EB%AA%85%3A%0A%E2%80%A2%20%EB%8B%B4%EB%8B%B9%EC%9E%90%2F%EC%97%B0%EB%9D%BD%EC%B2%98%3A%0A%E2%80%A2%20%EB%AC%B8%EC%9D%98%20%EC%9C%A0%ED%98%95(%EA%B0%95%EC%97%B0%C2%B7%EC%88%98%EC%97%85%C2%B7%EB%B0%A9%EC%86%A1%C2%B7%EA%B3%B5%EC%97%B0%20%EB%93%B1)%3A%0A%E2%80%A2%20%ED%9D%AC%EB%A7%9D%20%EC%9D%BC%EC%A0%95%3A%0A%E2%80%A2%20%EB%8C%80%EC%83%81%C2%B7%EA%B7%9C%EB%AA%A8%3A%0A%E2%80%A2%20%EB%82%B4%EC%9A%A9%3A%0A" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 22px; min-height: 56px; border-radius: 16px; background: #FFD60A; color: #000000; font-size: 17px; font-weight: 700; text-decoration: none; text-shadow: none">문의서 작성하기<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a>
+</div>
+<div class="rv" style="margin-top: 20px; display: flex; justify-content: center; gap: 28px; font-size: 16px">
+<a href="mailto:scientistwatt@gmail.com?subject=%EA%B0%95%EC%97%B0%20%EB%AC%B8%EC%9D%98" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">이메일 보내기</a>
+<a href="https://open.kakao.com/me/wattisgoingon" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">카카오톡 상담</a>
+</div>
+<div style="margin-top: 6px; font-size: 14px; color: #8E8E93">scientistwatt@gmail.com</div>
+</div>
+</div>
+</section>
+
+<section class="det" style="padding: 0 24px 64px; max-width: 560px; margin: 0 auto">
+<details style="border-top: 1px solid #2C2C2E; border-bottom: 1px solid #2C2C2E">
+<summary style="display: flex; align-items: center; justify-content: space-between; min-height: 60px; font-size: 15px; color: #A1A1A6">
+<span>상세 이력 전체 보기</span>
+<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+</summary>
+<div style="padding: 4px 0 24px; display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 1.5; color: #D1D1D6">
+<div>숭실대학교 전기공학부</div>
+<div>FameLab Korea 2021 국내 3위</div>
+<div>과학기술정보통신부 위촉 과학 커뮤니케이터</div>
+<div>8.22 Energy Film Festival 국제 1위</div>
+<div>2021 사이언스 버스킹 우수콘텐츠 선정 및 쇼케이스 자문위원</div>
+<div>2021 대한민국 과학기술대전 과학 공연</div>
+<div>서울포럼 2021 부대행사 '유스포럼' 심사위원</div>
+<div>YTN 사이언스 유튜브 &lt;와이언스&gt; 비정기 출연</div>
+<div>팟캐스트 &lt;매불쇼&gt; 과학 코너 비정기 출연</div>
+<div>과학 콘서트 &lt;코딱지별 바이러스&gt; 퍼포먼스 진행</div>
+<div>와이즈만 영재교육 심화과정 강사</div>
+<div>북 콘서트 &lt;궤도의 과학토크쇼&gt; 진행</div>
+<div>과학 라디오 &lt;과학수다&gt; 출연 및 간행물 저</div>
+<div>과학 교양서 &lt;컵라면이 익을 동안 읽는 과학&gt; 저</div>
+<div>영등포문화재단 어린이 과학 프로그램 강사</div>
+<div>D.NAV NASA 유니버셜 리더 코스 강사</div>
+<div>초등교육 플랫폼 '꾸그' 과학 강사</div>
+<div>KISTI(한국과학기술정보연구원) 홍보 영상 제작 총괄</div>
+<div>강원대학교 과학영재교육원 과학 소통 과정 강사</div>
+</div>
+</details>
+<div style="margin-top: 40px; text-align: center; font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: #8E8E93">What is going on? — Watt</div>
+</section>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var root = function () { return document.scrollingElement || document.documentElement; };
+  var lamps = Array.prototype.slice.call(document.querySelectorAll('[data-lamp]'));
+  var secs = lamps.map(function (el) { return el.closest('[data-on]'); });
+  var spark = document.querySelector('[data-spark]');
+  var cur = document.querySelector('[data-cur]');
+  var raf = 0;
+
+  function updateLamps() {
+    var se = root();
+    var vh = se.clientHeight;
+    var max = se.scrollHeight - vh;
+    var lit;
+    if (max <= 4) {
+      lit = lamps.map(function () { return 1; });
+    } else {
+      var p = Math.min(1, Math.max(0, se.scrollTop / max));
+      var y = 56 + p * (vh - 68);
+      if (spark) spark.style.top = y + 'px';
+      if (cur) cur.style.transform = 'scaleY(' + Math.max(0, (y + 4 - 56) / Math.max(1, vh - 56)) + ')';
+      lit = lamps.map(function (el) {
+        var top = el.getBoundingClientRect().top;
+        return y + 4 >= top + (el.getAttribute('data-lamp') === '0' ? 6 : 0) ? 1 : 0;
+      });
+    }
+    secs.forEach(function (sec, i) {
+      if (!sec) return;
+      var v = lit[i] ? '1' : '0';
+      if (sec.getAttribute('data-on') !== v) sec.setAttribute('data-on', v);
+    });
+  }
+  function tick() {
+    if (raf) return;
+    raf = requestAnimationFrame(function () { raf = 0; updateLamps(); });
+  }
+  window.addEventListener('scroll', tick, { passive: true });
+  window.addEventListener('resize', tick);
+  window.addEventListener('load', updateLamps);
+  updateLamps();
+  setTimeout(updateLamps, 400);
+
+  /* 오른쪽 전선: 누르거나 끌어서 페이지 이동 */
+  var wire = document.getElementById('wire');
+  if (wire) {
+    var dragging = false;
+    var scrub = function (e) {
+      var r = wire.getBoundingClientRect();
+      var p = Math.min(1, Math.max(0, (e.clientY - r.top) / r.height));
+      var se = root();
+      se.scrollTo({ top: p * (se.scrollHeight - se.clientHeight), behavior: 'instant' });
+    };
+    wire.addEventListener('pointerdown', function (e) {
+      dragging = true;
+      try { wire.setPointerCapture(e.pointerId); } catch (_) {}
+      scrub(e);
+    });
+    wire.addEventListener('pointermove', function (e) { if (dragging) scrub(e); });
+    wire.addEventListener('pointerup', function () { dragging = false; });
+    wire.addEventListener('pointercancel', function () { dragging = false; });
+  }
+
+  /* 영상 자동 재생 (소리 없이) */
+  Array.prototype.forEach.call(document.querySelectorAll('.car video'), function (v) {
+    v.muted = true; v.defaultMuted = true;
+    try { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } catch (_) {}
+  });
+
+  /* 사진 카드: 드래그, 점 클릭, 마지막 다음은 처음으로 */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-car]'), function (wrap) {
+    var el = wrap.querySelector('.car');
+    if (!el) return;
+    var step = function () {
+      var c = el.querySelector('.card');
+      return c ? c.offsetWidth + 12 : el.clientWidth;
+    };
+    var drag = null;
+    var loopT = 0;
+    el.addEventListener('scroll', function () {
+      if (drag) return;
+      clearTimeout(loopT);
+      loopT = setTimeout(function () {
+        var max = el.scrollWidth - el.clientWidth;
+        if (max > 0 && el.scrollLeft >= max - 8) el.scrollTo({ left: 0, behavior: 'instant' });
+      }, 160);
+    }, { passive: true });
+    el.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      drag = { x: e.clientX, sl: el.scrollLeft, dx: 0 };
+      el.style.scrollSnapType = 'none';
+      el.classList.add('dragging');
+      try { el.setPointerCapture(e.pointerId); } catch (_) {}
+    });
+    el.addEventListener('pointermove', function (e) {
+      if (!drag) return;
+      drag.dx = e.clientX - drag.x;
+      el.scrollLeft = drag.sl - drag.dx;
+    });
+    var end = function () {
+      if (!drag) return;
+      var d = drag; drag = null;
+      var s = step();
+      var idx;
+      if (d.dx < -40) idx = Math.round(d.sl / s) + 1;
+      else if (d.dx > 40) idx = Math.round(d.sl / s) - 1;
+      else idx = Math.round(el.scrollLeft / s);
+      el.classList.remove('dragging');
+      var max = el.scrollWidth - el.clientWidth;
+      if (idx < 0) {
+        el.scrollTo({ left: max, behavior: 'instant' });
+        el.style.scrollSnapType = '';
+        requestAnimationFrame(function () { el.scrollBy({ left: -s, behavior: 'smooth' }); });
+        return;
+      }
+      el.scrollTo({ left: Math.min(max, idx * s), behavior: 'smooth' });
+      setTimeout(function () { el.style.scrollSnapType = ''; }, 450);
+    };
+    el.addEventListener('pointerup', end);
+    el.addEventListener('pointercancel', end);
+    Array.prototype.forEach.call(wrap.querySelectorAll('.dotbtn'), function (btn) {
+      btn.addEventListener('click', function () {
+        var i = Number(btn.getAttribute('data-i')) || 0;
+        el.scrollTo({ left: i * step(), behavior: 'smooth' });
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
